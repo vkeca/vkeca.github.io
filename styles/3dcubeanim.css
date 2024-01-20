@@ -1,0 +1,156 @@
+/* toggle the cube dimensions here. */
+
+/* 3D Cube */
+.space3d {
+  perspective: 1000px;
+  width: 120px;
+  height: 120px;
+  text-align: center;
+  display: inline-block;
+  margin: 10px;
+}
+
+.space3d ._3dbox:hover {
+  transform: rotateX(-90deg);
+}
+
+
+._3dbox {
+  display: inline-block;
+  transition: all 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+._3dbox [class*="-img"] {
+  background-image: url(./tech-logos.png);
+  background-repeat: no-repeat;
+}
+
+._3dface {
+  overflow: hidden;
+  position: absolute;
+  border: 1px solid #888;
+  background-color: #4e4db1;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.26), 0 0 5px 0 rgba(0, 0, 0, 0.3);
+  color: #333;
+  line-height: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+._3dface > * {
+  margin: 0;
+  color: white;
+  padding: 15px;
+}
+
+._3dface--front {
+  width: 120px;
+  height: 120px;
+  transform: translate3d(0, 0, 60px);
+}
+
+._3dface--top {
+  width: 120px;
+  height: 120px;
+  transform: rotateX(90deg) translate3d(0, 0, 60px);
+}
+
+
+.nodejs-img {
+  background-position: 15px 35px;
+}
+
+.nodejs-img {
+  background-position: 15px 35px;
+}
+
+
+.react-img {
+  background-position: -95px 35px;
+}
+
+.nodejs-img {
+  background-position: 15px 35px;
+}
+
+.react-img {
+  background-position: -95px 35px;
+}
+
+.vue-img {
+  background-position: -205px 35px;
+}
+
+.mongodb-img {
+  background-position: -314px 35px;
+}
+
+.express-img {
+  background-position: -434px 35px;
+}
+
+.angular-img {
+  background-position: -542px 35px;
+}
+
+.laravel-img {
+  background-position: -638px 28px;
+}
+
+.codeigniter-img {
+  background-position: -743px 25px;
+}
+
+.reactnative-img {
+  background-position: -852px 35px;
+}
+
+.php7-img {
+  background-position: -1006px 38px;
+}
+
+.zend-img {
+  background-position: -1146px 35px;
+}
+
+.django-img {
+  background-position: -1278px 40px;
+}
+
+#successMessage, #errorMessage {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  left: 50px;
+  opacity: 0;
+  transition: .2s;
+}
+
+#successMessage_sub, #errorMessage_sub,#AlreadyExistMessage_sub {
+  position: absolute;
+  top: 210px;
+  right: 50px;
+  left: 50px;
+  opacity: 0;
+  transition: .2s;
+}
+
+.alert{
+  border-radius: 50px;
+  color: #fefeff;
+  border-color: #fefeff
+}
+
+.alert-success{
+  background-color: #5957cd;
+}
+
+.alert-danger{
+  background-color: #ff81b1;
+}
