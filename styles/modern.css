@@ -1,0 +1,176 @@
+/* ── Gradient utilities ──────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #ffcc67 0%, #ff67cb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.gradient-bg {
+  background: linear-gradient(135deg, #ffcc67 0%, #ff67cb 100%);
+}
+
+/* ── Hero mesh bg ────────────────────────────────── */
+.hero-bg {
+  background:
+    radial-gradient(
+      ellipse at 15% 85%,
+      rgba(255, 204, 103, 0.18) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 85% 15%,
+      rgba(255, 103, 203, 0.15) 0%,
+      transparent 55%
+    ),
+    #f8fafc;
+}
+
+/* ── Scroll-reveal ───────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-28px);
+  transition:
+    opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(28px);
+  transition:
+    opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible,
+.reveal-left.visible,
+.reveal-right.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.delay-1 {
+  transition-delay: 0.1s;
+}
+.delay-2 {
+  transition-delay: 0.2s;
+}
+.delay-3 {
+  transition-delay: 0.3s;
+}
+.delay-4 {
+  transition-delay: 0.4s;
+}
+.delay-5 {
+  transition-delay: 0.5s;
+}
+.delay-6 {
+  transition-delay: 0.6s;
+}
+
+/* ── Sticky nav bg on scroll ─────────────────────── */
+#navbar {
+  transition:
+    background 0.3s,
+    box-shadow 0.3s;
+}
+#navbar.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 24px rgba(0, 0, 0, 0.07);
+}
+
+/* ── Tech card float ─────────────────────────────── */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+.float-anim {
+  animation: float 3.2s ease-in-out infinite;
+}
+
+/* ── Form focus ring ─────────────────────────────── */
+.form-input:focus {
+  outline: none;
+  border-color: #ffcc67;
+  box-shadow: 0 0 0 3px rgba(255, 204, 103, 0.22);
+}
+
+/* ── Scroll-up button ────────────────────────────── */
+#scrollup {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+#scrollup.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ── 3D Tech Cube ────────────────────────────────── */
+.cube-wrap {
+  perspective: 600px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+.cube {
+  width: 128px;
+  height: 128px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.75s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cube-wrap:hover .cube {
+  transform: rotateX(-90deg);
+}
+
+.cube-face {
+  position: absolute;
+  width: 128px;
+  height: 128px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+
+.cube-face--front {
+  background: #fff;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+  transform: translateZ(64px);
+}
+
+.cube-face--top {
+  background: linear-gradient(135deg, #ffcc67 0%, #ff67cb 100%);
+  transform: rotateX(90deg) translateZ(64px);
+  padding: 12px;
+  text-align: center;
+}
+
+.cube-face--top span {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+}
